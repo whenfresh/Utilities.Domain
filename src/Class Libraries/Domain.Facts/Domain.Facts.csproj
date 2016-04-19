@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Cavity.Domain.Facts</AssemblyName>
+    <ProjectGuid>{78E22D73-593D-448E-A4C0-F02D1E88E244}</ProjectGuid>
+    <RestorePackages>true</RestorePackages>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Properties\CodeAnalysis.dictionary" />
+    <None Include="packages.config" />
+    <None Include="sabc.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersionNumber)' &gt; '2.0' ">
+    <Compile Include="Collections\INormalityComparer.Facts.cs" />
+    <Compile Include="Collections\LevenshteinComparer.Facts.cs" />
+    <Compile Include="Collections\LexicalCollection.Facts.cs" />
+    <Compile Include="Collections\NormalityComparer.Facts.cs" />
+    <Compile Include="Collections\CaverphoneComparer.Facts.cs" />
+    <Compile Include="Collections\MetaphoneComparer.Facts.cs" />
+    <Compile Include="Collections\SoundexComparer.Facts.cs" />
+    <Compile Include="IO\Directory.ExtensionMethods.Facts.cs" />
+    <Compile Include="IO\File.ExtensionMethods.Facts.cs" />
+    <Compile Include="Models\LexicalItem.Facts.cs" />
+    <Compile Include="Models\Lexicon.String.ExtensionMethods.Facts.cs" />
+    <Compile Include="Models\Telephone.Facts.cs" />
+    <Compile Include="Models\LexicalMatch.Facts.cs" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersionNumber)' &gt;= '3.5' ">
+    <Compile Include="Collections\SynonymCollection.Facts.cs" />
+    <Compile Include="Collections\UnderscoreComparer.cs" />
+    <Compile Include="Data\CsvLexiconStorage.Facts.cs" />
+    <Compile Include="Data\IStoreLexicon.Facts.cs" />
+    <Compile Include="Models\BritishTelephone.Facts.cs" />
+    <Compile Include="Models\BritishTelephoneNumberLength.Facts.cs" />
+    <Compile Include="Models\BritishTelephoneNumberPlan.Facts.cs" />
+    <Compile Include="Models\BritishTelephoneNumberPlanItem.Facts.cs" />
+    <Compile Include="Models\Coordinates.Facts.cs" />
+    <Compile Include="Models\Currency.Facts.cs" />
+    <Compile Include="Models\Lexicon.Facts.cs" />
+    <Compile Include="Models\Money.Facts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cavity.Core">
+      <HintPath>..\..\packages\Cavity.Core.2.0.0.970\lib\$(TargetFrameworkVersionName)\Cavity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cavity.Data">
+      <HintPath>..\..\packages\Cavity.Data.2.0.0.970\lib\$(TargetFrameworkVersionName)\Cavity.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xunit, Version=1.9.2.1705, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.extensions">
+      <HintPath>..\..\packages\xunit.extensions.1.9.2\lib\net20\xunit.extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersionNumber)' &gt; '2.0' ">
+    <Reference Include="Cavity.Testing.Unit">
+      <HintPath>..\..\packages\Cavity.Testing.Unit.2.0.0.848\lib\$(TargetFrameworkVersionName)\Cavity.Testing.Unit.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.2.1409.1722\lib\$(TargetFrameworkVersionName)\Moq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersionNumber)' &gt;= '3.5' ">
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFrameworkVersionNumber)' &gt;= '4.0' ">
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{FAD65C24-7586-44A2-9B12-CC4B4CADE3E4}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Cavity 2.0\AnyCPU.platform" />
+  <Import Project="$(MSBuildExtensionsPath)\Cavity 2.0\Tests.project" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!--
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
