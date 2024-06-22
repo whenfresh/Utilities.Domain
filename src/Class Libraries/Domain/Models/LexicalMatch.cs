@@ -1,7 +1,5 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
-
     public sealed class LexicalMatch : ComparableObject
     {
         public LexicalMatch(LexicalItem item)

@@ -1,9 +1,7 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Facts.Collections
 {
-    using System;
     using System.Collections.Generic;
     using Moq;
-    using Xunit;
 
     public sealed class SynonymCollectionFacts
     {

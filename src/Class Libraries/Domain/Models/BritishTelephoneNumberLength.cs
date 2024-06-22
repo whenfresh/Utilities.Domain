@@ -1,9 +1,5 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using Cavity.Collections;
-
     public static class BritishTelephoneNumberLength
     {
         private static readonly HashSet<string> _twelves = Twelves().ToHashSet(StringComparer.OrdinalIgnoreCase);

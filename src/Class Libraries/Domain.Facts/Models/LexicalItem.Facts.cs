@@ -1,9 +1,8 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Facts.Models
 {
-    using System;
     using System.Linq;
-    using Cavity.Collections;
-    using Xunit;
+    using WhenFresh.Utilities.Core;
+    using WhenFresh.Utilities.Domain.Facts.Collections;
 
     public sealed class LexicalItemFacts
     {

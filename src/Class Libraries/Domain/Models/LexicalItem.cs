@@ -1,12 +1,9 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
-    using System.Collections.Generic;
+    using WhenFresh.Utilities.Core.Data;
+    using WhenFresh.Utilities.Domain.Collections;
 #if !NET20
-    using System.Linq;
 #endif
-    using Cavity.Collections;
-    using Cavity.Data;
 
     public class LexicalItem
     {

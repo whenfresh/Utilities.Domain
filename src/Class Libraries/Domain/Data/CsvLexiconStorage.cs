@@ -1,17 +1,14 @@
-﻿namespace Cavity.Data
+﻿namespace WhenFresh.Utilities.Domain.Data
 {
-    using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
-    using System.Diagnostics.CodeAnalysis;
-    using System.IO;
+    using WhenFresh.Utilities.Core.Collections;
+    using WhenFresh.Utilities.Core.IO;
+    using WhenFresh.Utilities.Data.Data;
+    using WhenFresh.Utilities.Domain.Collections;
+    using WhenFresh.Utilities.Domain.Diagnostics;
+    using WhenFresh.Utilities.Domain.Models;
 #if !NET20
-    using System.Linq;
 #endif
-    using Cavity.Collections;
-    using Cavity.Diagnostics;
-    using Cavity.IO;
-    using Cavity.Models;
 
     public class CsvLexiconStorage : IStoreLexicon
     {
@@ -191,11 +188,7 @@
             {
                 var canonical = data["CANONICAL"];
                 var item = lexicon[canonical] ?? lexicon.Add(canonical);
-#if NET20
-                foreach (var synonym in StringExtensionMethods.Split(data["SYNONYMS"], ';', StringSplitOptions.RemoveEmptyEntries))
-#else
                 foreach (var synonym in data["SYNONYMS"].Split(';', StringSplitOptions.RemoveEmptyEntries))
-#endif
                 {
                     item.Synonyms.Add(synonym);
                 }

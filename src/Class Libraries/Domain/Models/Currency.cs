@@ -1,8 +1,6 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
     using System.Globalization;
-    using System.Xml.Serialization;
 
     [Comment("http://en.wikipedia.org/wiki/ISO_4217")]
     [XmlRoot("currency")]

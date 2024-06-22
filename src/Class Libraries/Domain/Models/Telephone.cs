@@ -1,11 +1,9 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
     using System.Diagnostics;
+    using WhenFresh.Utilities.Domain.Diagnostics;
 #if !NET20
-    using System.Linq;
 #endif
-    using Cavity.Diagnostics;
 
     public sealed class Telephone : ComparableObject
     {

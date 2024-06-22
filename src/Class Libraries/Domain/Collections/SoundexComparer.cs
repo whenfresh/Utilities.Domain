@@ -1,7 +1,5 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Collections
 {
-    using System;
-
     public class SoundexComparer : INormalityComparer
     {
         private static readonly SoundexComparer _instance = new SoundexComparer();
@@ -35,11 +33,7 @@
 
         public virtual string Normalize(string value)
         {
-#if NET20
-            return StringExtensionMethods.Soundex(value);
-#else
             return value.Soundex();
-#endif
         }
     }
 }

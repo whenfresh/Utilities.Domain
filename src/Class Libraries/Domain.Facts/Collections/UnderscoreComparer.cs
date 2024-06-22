@@ -1,6 +1,6 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Facts.Collections
 {
-    using System;
+    using WhenFresh.Utilities.Core;
 
     public sealed class UnderscoreComparer : NormalityComparer
     {

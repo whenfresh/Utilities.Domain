@@ -1,7 +1,7 @@
-﻿namespace Cavity.Data
+﻿namespace WhenFresh.Utilities.Domain.Data
 {
-    using Cavity.Collections;
-    using Cavity.Models;
+    using WhenFresh.Utilities.Domain.Collections;
+    using WhenFresh.Utilities.Domain.Models;
 
     public interface IStoreLexicon
     {

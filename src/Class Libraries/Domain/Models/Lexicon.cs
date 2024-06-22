@@ -1,9 +1,7 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
-    using System.Diagnostics.CodeAnalysis;
-    using Cavity.Collections;
-    using Cavity.Data;
+    using WhenFresh.Utilities.Domain.Collections;
+    using WhenFresh.Utilities.Domain.Data;
 
     [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Justification = "This naming is intentional.")]
     public class Lexicon : LexicalCollection

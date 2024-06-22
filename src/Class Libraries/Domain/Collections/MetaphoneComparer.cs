@@ -1,7 +1,5 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Collections
 {
-    using System;
-
     public class MetaphoneComparer : INormalityComparer
     {
         private static readonly MetaphoneComparer _instance = new MetaphoneComparer();

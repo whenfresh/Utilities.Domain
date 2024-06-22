@@ -1,9 +1,5 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Collections
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-
     public class SynonymCollection : IEnumerable<string>
     {
         private INormalityComparer _comparer;

@@ -1,8 +1,6 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Facts.Models
 {
-    using System;
-    using Cavity.Collections;
-    using Xunit;
+    using WhenFresh.Utilities.Core;
 
     public sealed class LexicalMatchFacts
     {

@@ -1,7 +1,5 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Collections
 {
-    using System;
-
     public class CaverphoneComparer : INormalityComparer
     {
         private static readonly CaverphoneComparer _instance = new CaverphoneComparer();

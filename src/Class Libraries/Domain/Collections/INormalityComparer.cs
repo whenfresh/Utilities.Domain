@@ -1,8 +1,5 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Collections
 {
-    using System;
-    using System.Collections.Generic;
-
     public interface INormalityComparer : IEqualityComparer<string>
     {
         StringComparison Comparison { get; }

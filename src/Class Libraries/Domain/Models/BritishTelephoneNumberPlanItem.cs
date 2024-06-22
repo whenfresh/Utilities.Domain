@@ -1,4 +1,4 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
     public class BritishTelephoneNumberPlanItem
     {

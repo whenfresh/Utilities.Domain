@@ -1,8 +1,5 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Facts.Collections
 {
-    using System;
-    using Xunit;
-
     public sealed class NormalityComparerFacts
     {
         [Fact]

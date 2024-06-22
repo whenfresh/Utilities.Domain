@@ -1,7 +1,5 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Facts.Models
 {
-    using Xunit;
-
     public sealed class BritishTelephoneNumberPlanItemFacts
     {
         [Fact]

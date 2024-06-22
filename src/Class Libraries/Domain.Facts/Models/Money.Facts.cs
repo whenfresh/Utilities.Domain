@@ -1,10 +1,9 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Facts.Models
 {
-    using System;
     using System.Globalization;
     using System.Threading;
-    using Cavity.Xml.XPath;
-    using Xunit;
+    using WhenFresh.Utilities.Core;
+    using WhenFresh.Utilities.Core.Xml.XPath;
 
     public sealed class MoneyFacts
     {

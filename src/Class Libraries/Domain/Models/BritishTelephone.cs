@@ -1,8 +1,6 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
-    using System.Diagnostics.CodeAnalysis;
-    using Cavity.Collections;
+    using WhenFresh.Utilities.Core.Collections;
 
     [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Justification = "This naming is intentional.")]
     [SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Justification = "This class doesn't need binary serialization.")]

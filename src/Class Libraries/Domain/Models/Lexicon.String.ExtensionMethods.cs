@@ -1,7 +1,5 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
-
     public static class LexiconStringExtensionMethods
     {
 #if NET20

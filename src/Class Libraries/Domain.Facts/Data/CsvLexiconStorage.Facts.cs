@@ -1,12 +1,9 @@
-﻿namespace Cavity.Data
+﻿namespace WhenFresh.Utilities.Domain.Facts.Data
 {
-    using System;
     using System.IO;
     using System.Linq;
-    using Cavity.Collections;
-    using Cavity.IO;
-    using Cavity.Models;
-    using Xunit;
+    using WhenFresh.Utilities.Core.IO;
+    using WhenFresh.Utilities.Domain.Data;
 
     public sealed class CsvLexiconStorageFacts
     {

@@ -1,8 +1,7 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Facts.Models
 {
-    using System;
-    using Cavity.Xml.XPath;
-    using Xunit;
+    using WhenFresh.Utilities.Core;
+    using WhenFresh.Utilities.Core.Xml.XPath;
 
     public sealed class CoordinatesFacts
     {

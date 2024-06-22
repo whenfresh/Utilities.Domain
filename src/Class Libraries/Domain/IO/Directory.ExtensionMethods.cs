@@ -1,14 +1,11 @@
-﻿namespace Cavity.IO
+﻿namespace WhenFresh.Utilities.Domain.IO
 {
-    using System;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Globalization;
-    using System.IO;
+    using System.Xml;
+    using WhenFresh.Utilities.Core.Collections;
+    using WhenFresh.Utilities.Core.IO;
 #if NET40
     using System.Numerics;
 #endif
-    using System.Xml;
-    using Cavity.Collections;
 
     public static class DirectoryExtensionMethods
     {

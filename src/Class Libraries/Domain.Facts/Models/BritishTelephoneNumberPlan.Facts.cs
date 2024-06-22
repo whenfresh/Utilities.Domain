@@ -1,12 +1,9 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Facts.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
-    using Cavity.Collections;
-    using Cavity.IO;
-    using Xunit;
-    using Xunit.Extensions;
+    using WhenFresh.Utilities.Core.Collections;
+    using WhenFresh.Utilities.Core.IO;
 
     public sealed class BritishTelephoneNumberPlanFacts
     {

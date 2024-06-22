@@ -1,12 +1,10 @@
-﻿namespace Cavity.IO
+﻿namespace WhenFresh.Utilities.Domain.IO
 {
-    using System;
-    using System.Globalization;
-    using System.IO;
+    using System.Xml;
+    using WhenFresh.Utilities.Core.IO;
 #if NET40
     using System.Numerics;
 #endif
-    using System.Xml;
 
     public static class FileExtensionMethods
     {

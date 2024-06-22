@@ -1,10 +1,8 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Facts.Collections
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Cavity.Models;
-    using Xunit;
+    using WhenFresh.Utilities.Core;
 
     public sealed class LexicalCollectionFacts
     {

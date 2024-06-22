@@ -1,9 +1,5 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Facts.Models
 {
-    using System;
-    using Cavity.Collections;
-    using Xunit;
-
     public sealed class LexiconStringExtensionMethodsFacts
     {
         [Fact]

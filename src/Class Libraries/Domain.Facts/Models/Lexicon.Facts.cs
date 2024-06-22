@@ -1,10 +1,7 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Facts.Models
 {
-    using System;
-    using Cavity.Collections;
-    using Cavity.Data;
     using Moq;
-    using Xunit;
+    using WhenFresh.Utilities.Domain.Data;
 
     public sealed class LexiconFacts
     {

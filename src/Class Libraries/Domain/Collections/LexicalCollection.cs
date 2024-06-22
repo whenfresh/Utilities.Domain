@@ -1,12 +1,8 @@
-﻿namespace Cavity.Collections
+﻿namespace WhenFresh.Utilities.Domain.Collections
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
+    using WhenFresh.Utilities.Domain.Models;
 #if !NET20
-    using System.Linq;
 #endif
-    using Cavity.Models;
 
     public class LexicalCollection : IEnumerable<LexicalItem>
     {

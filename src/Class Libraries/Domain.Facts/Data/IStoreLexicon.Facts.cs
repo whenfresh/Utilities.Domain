@@ -1,9 +1,7 @@
-﻿namespace Cavity.Data
+﻿namespace WhenFresh.Utilities.Domain.Facts.Data
 {
-    using Cavity.Collections;
-    using Cavity.Models;
     using Moq;
-    using Xunit;
+    using WhenFresh.Utilities.Domain.Data;
 
     public sealed class IStoreLexiconFacts
     {

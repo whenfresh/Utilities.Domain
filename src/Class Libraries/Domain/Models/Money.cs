@@ -1,9 +1,6 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
     using System.Globalization;
-    using System.Threading;
-    using System.Xml.Serialization;
 
     [XmlRoot("money")]
     public struct Money : IEquatable<Money>

@@ -1,8 +1,5 @@
-﻿namespace Cavity.Models
+﻿namespace WhenFresh.Utilities.Domain.Models
 {
-    using System;
-    using System.Xml.Serialization;
-
     [XmlRoot("coordinates")]
     public struct Coordinates : IEquatable<Coordinates>
     {
