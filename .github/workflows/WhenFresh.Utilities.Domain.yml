@@ -1,4 +1,4 @@
-name: WhenFresh.Utilities.Core
+name: WhenFresh.Utilities.Domain
 on:
   workflow_dispatch:
   push:
