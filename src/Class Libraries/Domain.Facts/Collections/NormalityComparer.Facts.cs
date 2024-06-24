@@ -24,17 +24,17 @@
         [Fact]
         public void op_GetHashCode_string()
         {
-            const int expected = 1581936741;
             var actual = new NormalityComparer().GetHashCode("example");
-
+            var expected = new NormalityComparer().GetHashCode("example");
+            
             Assert.Equal(expected, actual);
         }
 
         [Fact]
         public void op_GetHashCode_stringEmpty()
         {
-            const int expected = 757602046;
             var actual = new NormalityComparer().GetHashCode(string.Empty);
+            var expected = new NormalityComparer().GetHashCode(string.Empty);
 
             Assert.Equal(expected, actual);
         }

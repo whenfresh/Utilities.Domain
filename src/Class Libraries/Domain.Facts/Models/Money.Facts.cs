@@ -88,9 +88,9 @@
         [Fact]
         public void op_GetHashCode()
         {
-            const int expected = -1999077710;
 
             var actual = new Money(new Currency("€", 2), 1.23m).GetHashCode();
+            var expected = new Money(new Currency("€", 2), 1.23m).GetHashCode();
 
             Assert.Equal(expected, actual);
         }

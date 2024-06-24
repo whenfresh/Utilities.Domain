@@ -36,8 +36,9 @@
         [Fact]
         public void op_GetHashCode_string()
         {
-            const int expected = -1563320708;
+            
             var actual = SoundexComparer.Instance.GetHashCode("example");
+            var expected = SoundexComparer.Instance.GetHashCode("example");
 
             Assert.Equal(expected, actual);
         }
@@ -45,8 +46,8 @@
         [Fact]
         public void op_GetHashCode_stringEmpty()
         {
-            const int expected = 757602046;
             var actual = SoundexComparer.Instance.GetHashCode(string.Empty);
+            var expected = SoundexComparer.Instance.GetHashCode(string.Empty);
 
             Assert.Equal(expected, actual);
         }

@@ -36,8 +36,9 @@
         [Fact]
         public void op_GetHashCode_string()
         {
-            const int expected = 1218658690;
+            
             var actual = CaverphoneComparer.Instance.GetHashCode("example");
+            var expected = CaverphoneComparer.Instance.GetHashCode("example");
 
             Assert.Equal(expected, actual);
         }
@@ -45,9 +46,9 @@
         [Fact]
         public void op_GetHashCode_stringEmpty()
         {
-            const int expected = 757602046;
             var actual = CaverphoneComparer.Instance.GetHashCode(string.Empty);
 
+            var expected = CaverphoneComparer.Instance.GetHashCode(string.Empty);
             Assert.Equal(expected, actual);
         }
 

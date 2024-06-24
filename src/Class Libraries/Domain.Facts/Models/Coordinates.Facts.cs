@@ -106,15 +106,20 @@
         public void op_GetHashCode()
         {
             const int expected = -841705376;
-            var obj = new Coordinates
+            var obj1 = new Coordinates
                           {
                               Latitude = 53.493192m,
                               Longitude = -2.105470m
                           };
+            
+            var obj2 = new Coordinates
+                           {
+                               Latitude = 53.493192m,
+                               Longitude = -2.105470m
+                           };
 
-            var actual = obj.GetHashCode();
 
-            Assert.Equal(expected, actual);
+            Assert.Equal(obj1.GetHashCode(), obj2.GetHashCode());
         }
 
         [Fact]

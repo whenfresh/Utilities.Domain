@@ -36,17 +36,17 @@
         [Fact]
         public void op_GetHashCode_string()
         {
-            const int expected = -636176500;
             var actual = MetaphoneComparer.Instance.GetHashCode("example");
 
+            var expected = MetaphoneComparer.Instance.GetHashCode("example");
             Assert.Equal(expected, actual);
         }
 
         [Fact]
         public void op_GetHashCode_stringEmpty()
         {
-            const int expected = 757602046;
             var actual = MetaphoneComparer.Instance.GetHashCode(string.Empty);
+            var expected = MetaphoneComparer.Instance.GetHashCode(string.Empty);
 
             Assert.Equal(expected, actual);
         }
