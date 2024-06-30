@@ -2,9 +2,9 @@
 {
     using System.Diagnostics;
     using WhenFresh.Utilities.Collections;
-    using WhenFresh.Utilities.Core.Collections;
-    using WhenFresh.Utilities.Core.IO;
-    using WhenFresh.Utilities.Data.Data;
+    using WhenFresh.Utilities.Collections;
+    using WhenFresh.Utilities.IO;
+    using WhenFresh.Utilities.Data;
     using WhenFresh.Utilities.Diagnostics;
     using WhenFresh.Utilities.Models;
 #if !NET20

@@ -3,7 +3,7 @@
     using System.IO;
     using System.Linq;
     using WhenFresh.Utilities.Collections;
-    using WhenFresh.Utilities.Core.IO;
+    using WhenFresh.Utilities.IO;
     using WhenFresh.Utilities.Models;
 
     public sealed class CsvLexiconStorageFacts

@@ -1,7 +1,7 @@
 ﻿namespace WhenFresh.Utilities.Models
 {
-    using WhenFresh.Utilities.Core.Collections;
-    using WhenFresh.Utilities.Data.Data;
+    using WhenFresh.Utilities.Collections;
+    using WhenFresh.Utilities.Data;
 
     [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Justification = "The naming is intentional.")]
     [SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Justification = "This class doesn't need binary serialization.")]

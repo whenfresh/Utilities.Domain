@@ -1,7 +1,7 @@
 ﻿namespace WhenFresh.Utilities.Models
 {
     using System.IO;
-    using WhenFresh.Utilities.Core.Collections;
+    using WhenFresh.Utilities.Collections;
 
     public sealed class BritishTelephoneFacts
     {

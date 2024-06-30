@@ -2,8 +2,8 @@
 {
     using System.Globalization;
     using System.Threading;
-    using WhenFresh.Utilities.Core;
-    using WhenFresh.Utilities.Core.Xml.XPath;
+    using WhenFresh.Utilities;
+    using WhenFresh.Utilities.Xml.XPath;
 
     public sealed class MoneyFacts
     {

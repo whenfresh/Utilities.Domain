@@ -2,7 +2,7 @@
 {
     using System.Linq;
     using WhenFresh.Utilities.Collections;
-    using WhenFresh.Utilities.Core;
+    using WhenFresh.Utilities;
 
     public sealed class LexicalItemFacts
     {

@@ -1,7 +1,7 @@
 ﻿namespace WhenFresh.Utilities.Models
 {
     using WhenFresh.Utilities.Collections;
-    using WhenFresh.Utilities.Core.Data;
+    using WhenFresh.Utilities.Data;
 #if !NET20
 #endif
 

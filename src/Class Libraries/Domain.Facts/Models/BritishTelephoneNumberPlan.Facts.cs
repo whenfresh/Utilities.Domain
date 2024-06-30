@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
     using System.IO;
-    using WhenFresh.Utilities.Core.Collections;
-    using WhenFresh.Utilities.Core.IO;
+    using WhenFresh.Utilities.Collections;
+    using WhenFresh.Utilities.IO;
 
     public sealed class BritishTelephoneNumberPlanFacts
     {

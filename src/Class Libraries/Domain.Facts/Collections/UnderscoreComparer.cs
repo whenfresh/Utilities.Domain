@@ -1,6 +1,6 @@
 ﻿namespace WhenFresh.Utilities.Collections
 {
-    using WhenFresh.Utilities.Core;
+    using WhenFresh.Utilities;
 
     public sealed class UnderscoreComparer : NormalityComparer
     {

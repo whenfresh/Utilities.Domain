@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using WhenFresh.Utilities.Core;
+    using WhenFresh.Utilities;
     using WhenFresh.Utilities.Models;
 
     public sealed class LexicalCollectionFacts

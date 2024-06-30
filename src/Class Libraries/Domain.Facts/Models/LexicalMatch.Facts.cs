@@ -1,7 +1,7 @@
 ﻿namespace WhenFresh.Utilities.Models
 {
     using WhenFresh.Utilities.Collections;
-    using WhenFresh.Utilities.Core;
+    using WhenFresh.Utilities;
 
     public sealed class LexicalMatchFacts
     {

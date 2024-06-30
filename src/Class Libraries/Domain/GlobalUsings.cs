@@ -7,4 +7,4 @@ global using System.Diagnostics.CodeAnalysis;
 global using System.IO;
 global using System.Linq;
 global using System.Xml.Serialization;
-global using WhenFresh.Utilities.Core;
+global using WhenFresh.Utilities;
