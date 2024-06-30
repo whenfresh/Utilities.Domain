@@ -1,14 +1,13 @@
-﻿namespace WhenFresh.Utilities.Data
+﻿namespace WhenFresh.Utilities.Data;
+
+using WhenFresh.Utilities.Collections;
+using WhenFresh.Utilities.Models;
+
+public interface IStoreLexicon
 {
-    using WhenFresh.Utilities.Collections;
-    using WhenFresh.Utilities.Models;
+    void Delete(Lexicon lexicon);
 
-    public interface IStoreLexicon
-    {
-        void Delete(Lexicon lexicon);
+    Lexicon Load(INormalityComparer comparer);
 
-        Lexicon Load(INormalityComparer comparer);
-
-        void Save(Lexicon lexicon);
-    }
+    void Save(Lexicon lexicon);
 }

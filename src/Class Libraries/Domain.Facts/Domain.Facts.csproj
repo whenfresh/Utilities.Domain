@@ -1,28 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net80</TargetFramework>
-    <AssemblyTitle>Cavity.Domain.Facts.dll</AssemblyTitle>
-    <Description>Cavity : Domain Facts Library (Release)</Description>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="WhenFresh.Utilities.Core" Version="3.0.0-preview.17" />
-    <PackageReference Include="WhenFresh.Utilities.Data" Version="3.0.0-preview.8" />
-    <PackageReference Include="WhenFresh.Utilities.Testing.Unit" Version="3.0.0-preview.11" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
-    <PackageReference Include="Moq" Version="4.20.70"/>
-    <PackageReference Include="xunit" Version="2.8.1"/>
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.1"/>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Properties\CodeAnalysis.dictionary" />
-    <None Include="sabc.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net80</TargetFramework>
+        <AssemblyTitle>Cavity.Domain.Facts.dll</AssemblyTitle>
+        <Description>Cavity : Domain Facts Library (Release)</Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="WhenFresh.Utilities.Core" Version="3.0.0-preview.17"/>
+        <PackageReference Include="WhenFresh.Utilities.Data" Version="3.0.0-preview.8"/>
+        <PackageReference Include="WhenFresh.Utilities.Testing.Unit" Version="3.0.0-preview.11"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0"/>
+        <PackageReference Include="Moq" Version="4.20.70"/>
+        <PackageReference Include="xunit" Version="2.8.1"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.8.1"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="Properties\CodeAnalysis.dictionary"/>
+        <None Include="sabc.csv">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.CSharp"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Domain\Domain.csproj"/>
+    </ItemGroup>
 </Project>

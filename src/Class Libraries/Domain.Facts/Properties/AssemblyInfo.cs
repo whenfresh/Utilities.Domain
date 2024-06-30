@@ -1,3 +1,1 @@
-﻿using System.Reflection;
-
-[assembly: CLSCompliant(false)]
+﻿[assembly: CLSCompliant(false)]

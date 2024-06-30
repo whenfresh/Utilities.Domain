@@ -1,68 +1,65 @@
-﻿namespace WhenFresh.Utilities.Models
+﻿namespace WhenFresh.Utilities.Models;
+
+using System.Globalization;
+
+[XmlRoot("money")]
+public struct Money : IEquatable<Money>
 {
-    using System.Globalization;
-
-    [XmlRoot("money")]
-    public struct Money : IEquatable<Money>
+    public Money(Currency currency,
+                 decimal amount)
+        : this()
     {
-        public Money(Currency currency,
-                     decimal amount)
-            : this()
-        {
-            Currency = currency;
-            Amount = amount;
-        }
+        Currency = currency;
+        Amount = amount;
+    }
 
-        [XmlAttribute("amount")]
-        public decimal Amount { get; set; }
+    [XmlAttribute("amount")] public decimal Amount { get; set; }
 
-        [XmlElement("currency")]
-        public Currency Currency { get; set; }
+    [XmlElement("currency")] public Currency Currency { get; set; }
 
-        public static bool operator ==(Money obj,
-                                       Money comparand)
-        {
-            return obj.Equals(comparand);
-        }
+    public static bool operator ==(Money obj,
+                                   Money comparand)
+    {
+        return obj.Equals(comparand);
+    }
 
-        public static bool operator !=(Money obj,
-                                       Money comparand)
-        {
-            return !obj.Equals(comparand);
-        }
+    public static bool operator !=(Money obj,
+                                   Money comparand)
+    {
+        return !obj.Equals(comparand);
+    }
 
-        public override bool Equals(object obj)
-        {
-            return !ReferenceEquals(null, obj) && Equals((Money)obj);
-        }
+    public override bool Equals(object obj)
+    {
+        return !ReferenceEquals(null, obj) && Equals((Money)obj);
+    }
 
-        public override int GetHashCode()
-        {
-            return Currency.GetHashCode() ^ Amount.GetHashCode();
-        }
+    public override int GetHashCode()
+    {
+        return Currency.GetHashCode() ^ Amount.GetHashCode();
+    }
 
-        public override string ToString()
-        {
-            return ToString(null, Currency);
-        }
+    public override string ToString()
+    {
+        return ToString(null, Currency);
+    }
 
-        public string ToString(CultureInfo culture)
-        {
-            return ToString(culture, Currency);
-        }
+    public string ToString(CultureInfo culture)
+    {
+        return ToString(culture, Currency);
+    }
 
-        public bool Equals(Money other)
-        {
-            return Currency == other.Currency
-                   && Amount == other.Amount;
-        }
+    public bool Equals(Money other)
+    {
+        return Currency == other.Currency
+               && Amount == other.Amount;
+    }
 
-        private string ToString(CultureInfo culture,
-                                Currency currency)
-        {
-            culture = culture ?? Thread.CurrentThread.CurrentUICulture;
+    private string ToString(CultureInfo culture,
+                            Currency currency)
+    {
+        culture = culture ?? Thread.CurrentThread.CurrentUICulture;
 
-            return string.Format(currency.ToNumberFormatInfo(culture), "{0:C}", Amount);
-        }
+        return string.Format(currency.ToNumberFormatInfo(culture), "{0:C}", Amount);
     }
 }

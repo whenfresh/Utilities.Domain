@@ -1,9 +1,8 @@
-﻿namespace WhenFresh.Utilities.Collections
-{
-    public interface INormalityComparer : IEqualityComparer<string>
-    {
-        StringComparison Comparison { get; }
+﻿namespace WhenFresh.Utilities.Collections;
 
-        string Normalize(string value);
-    }
+public interface INormalityComparer : IEqualityComparer<string>
+{
+    StringComparison Comparison { get; }
+
+    string Normalize(string value);
 }

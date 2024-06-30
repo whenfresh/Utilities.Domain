@@ -1,102 +1,99 @@
-﻿namespace WhenFresh.Utilities.Collections
+﻿namespace WhenFresh.Utilities.Collections;
+
+public sealed class MetaphoneComparerFacts
 {
-    using WhenFresh.Utilities;
-
-    public sealed class MetaphoneComparerFacts
+    [Fact]
+    public void a_definition()
     {
-        [Fact]
-        public void a_definition()
-        {
-            Assert.True(new TypeExpectations<MetaphoneComparer>()
-                            .DerivesFrom<object>()
-                            .IsConcreteClass()
-                            .IsUnsealed()
-                            .NoDefaultConstructor()
-                            .IsNotDecorated()
-                            .Implements<INormalityComparer>()
-                            .Result);
-        }
+        Assert.True(new TypeExpectations<MetaphoneComparer>()
+                    .DerivesFrom<object>()
+                    .IsConcreteClass()
+                    .IsUnsealed()
+                    .NoDefaultConstructor()
+                    .IsNotDecorated()
+                    .Implements<INormalityComparer>()
+                    .Result);
+    }
 
-        [Fact]
-        public void op_Equals_string_string_whenFalse()
-        {
-            const string value = "example";
+    [Fact]
+    public void op_Equals_string_string_whenFalse()
+    {
+        const string value = "example";
 
-            Assert.False(MetaphoneComparer.Instance.Equals(value, value));
-        }
+        Assert.False(MetaphoneComparer.Instance.Equals(value, value));
+    }
 
-        [Fact]
-        public void op_Equals_string_string_whenTrue()
-        {
-            const string value = "example";
+    [Fact]
+    public void op_Equals_string_string_whenTrue()
+    {
+        const string value = "example";
 
-            Assert.True(MetaphoneComparer.Instance.Equals(value.Metaphone(), value));
-        }
+        Assert.True(MetaphoneComparer.Instance.Equals(value.Metaphone(), value));
+    }
 
-        [Fact]
-        public void op_GetHashCode_string()
-        {
-            var actual = MetaphoneComparer.Instance.GetHashCode("example");
+    [Fact]
+    public void op_GetHashCode_string()
+    {
+        var actual = MetaphoneComparer.Instance.GetHashCode("example");
 
-            var expected = MetaphoneComparer.Instance.GetHashCode("example");
-            Assert.Equal(expected, actual);
-        }
+        var expected = MetaphoneComparer.Instance.GetHashCode("example");
+        Assert.Equal(expected, actual);
+    }
 
-        [Fact]
-        public void op_GetHashCode_stringEmpty()
-        {
-            var actual = MetaphoneComparer.Instance.GetHashCode(string.Empty);
-            var expected = MetaphoneComparer.Instance.GetHashCode(string.Empty);
+    [Fact]
+    public void op_GetHashCode_stringEmpty()
+    {
+        var actual = MetaphoneComparer.Instance.GetHashCode(string.Empty);
+        var expected = MetaphoneComparer.Instance.GetHashCode(string.Empty);
 
-            Assert.Equal(expected, actual);
-        }
+        Assert.Equal(expected, actual);
+    }
 
-        [Fact]
-        public void op_GetHashCode_stringNull()
-        {
-            const int expected = 0;
-            var actual = MetaphoneComparer.Instance.GetHashCode(null);
+    [Fact]
+    public void op_GetHashCode_stringNull()
+    {
+        const int expected = 0;
+        var actual = MetaphoneComparer.Instance.GetHashCode(null);
 
-            Assert.Equal(expected, actual);
-        }
+        Assert.Equal(expected, actual);
+    }
 
-        [Fact]
-        public void op_Normalize_string()
-        {
-            var expected = "example".Metaphone();
-            var actual = MetaphoneComparer.Instance.Normalize("example");
+    [Fact]
+    public void op_Normalize_string()
+    {
+        var expected = "example".Metaphone();
+        var actual = MetaphoneComparer.Instance.Normalize("example");
 
-            Assert.Equal(expected, actual);
-        }
+        Assert.Equal(expected, actual);
+    }
 
-        [Fact]
-        public void op_Normalize_stringEmpty()
-        {
-            var expected = string.Empty;
-            var actual = MetaphoneComparer.Instance.Normalize(expected);
+    [Fact]
+    public void op_Normalize_stringEmpty()
+    {
+        var expected = string.Empty;
+        var actual = MetaphoneComparer.Instance.Normalize(expected);
 
-            Assert.Equal(expected, actual);
-        }
+        Assert.Equal(expected, actual);
+    }
 
-        [Fact]
-        public void op_Normalize_stringNull()
-        {
-            Assert.Null(MetaphoneComparer.Instance.Normalize(null));
-        }
+    [Fact]
+    public void op_Normalize_stringNull()
+    {
+        Assert.Null(MetaphoneComparer.Instance.Normalize(null));
+    }
 
-        [Fact]
-        public void prop_Comparison()
-        {
-            Assert.True(new PropertyExpectations<MetaphoneComparer>(x => x.Comparison)
-                            .IsAutoProperty<StringComparison>()
-                            .IsNotDecorated()
-                            .Result);
-        }
+    [Fact]
+    public void prop_Comparison()
+    {
+        Assert.True(new PropertyExpectations<MetaphoneComparer>(x => x.Comparison)
+                    .IsAutoProperty<StringComparison>()
+                    .IsNotDecorated()
+                    .Result);
+    }
 
-        [Fact]
-        public void prop_Instance_get()
-        {
-            Assert.IsType<MetaphoneComparer>(MetaphoneComparer.Instance);
-        }
+    [Fact]
+    public void prop_Instance_get()
+    {
+        Assert.IsType<MetaphoneComparer>(MetaphoneComparer.Instance);
     }
 }

@@ -1,77 +1,63 @@
-﻿namespace WhenFresh.Utilities.Collections
+﻿namespace WhenFresh.Utilities.Collections;
+
+public class SynonymCollection : IEnumerable<string>
 {
-    public class SynonymCollection : IEnumerable<string>
+    private INormalityComparer _comparer;
+
+    public SynonymCollection(INormalityComparer comparer)
+        : this()
     {
-        private INormalityComparer _comparer;
+        Comparer = comparer;
+        Items = new Dictionary<string, string>(comparer);
+    }
 
-        public SynonymCollection(INormalityComparer comparer)
-            : this()
+    private SynonymCollection()
+    {
+    }
+
+    public int Count => Items.Count;
+
+    protected INormalityComparer Comparer
+    {
+        get => _comparer;
+
+        set
         {
-            Comparer = comparer;
-            Items = new Dictionary<string, string>(comparer);
+            if (null == value)
+                throw new ArgumentNullException("value");
+
+            _comparer = value;
         }
+    }
 
-        private SynonymCollection()
-        {
-        }
+    protected Dictionary<string, string> Items { get; }
 
-        public int Count
-        {
-            get
-            {
-                return Items.Count;
-            }
-        }
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
 
-        protected INormalityComparer Comparer
-        {
-            get
-            {
-                return _comparer;
-            }
+    public virtual IEnumerator<string> GetEnumerator()
+    {
+        return Items.Values.GetEnumerator();
+    }
 
-            set
-            {
-                if (null == value)
-                {
-                    throw new ArgumentNullException("value");
-                }
+    public virtual void Add(string value)
+    {
+        value = Comparer.Normalize(value);
+        if (Contains(value))
+            return;
 
-                _comparer = value;
-            }
-        }
+        Items.Add(value, value);
+    }
 
-        protected Dictionary<string, string> Items { get; private set; }
+    public virtual void Clear()
+    {
+        Items.Clear();
+    }
 
-        public virtual void Add(string value)
-        {
-            value = Comparer.Normalize(value);
-            if (Contains(value))
-            {
-                return;
-            }
-
-            Items.Add(value, value);
-        }
-
-        public virtual void Clear()
-        {
-            Items.Clear();
-        }
-
-        public virtual bool Contains(string value)
-        {
-            return Items.ContainsKey(value);
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        public virtual IEnumerator<string> GetEnumerator()
-        {
-            return Items.Values.GetEnumerator();
-        }
+    public virtual bool Contains(string value)
+    {
+        return Items.ContainsKey(value);
     }
 }

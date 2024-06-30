@@ -1,64 +1,63 @@
-﻿namespace WhenFresh.Utilities.Models
+﻿namespace WhenFresh.Utilities.Models;
+
+using WhenFresh.Utilities.Collections;
+
+public sealed class LexiconStringExtensionMethodsFacts
 {
-    using WhenFresh.Utilities.Collections;
-
-    public sealed class LexiconStringExtensionMethodsFacts
+    [Fact]
+    public void a_definition()
     {
-        [Fact]
-        public void a_definition()
-        {
-            Assert.True(typeof(LexiconStringExtensionMethods).IsStatic());
-        }
+        Assert.True(typeof(LexiconStringExtensionMethods).IsStatic());
+    }
 
-        [Fact]
-        public void op_RemoveMatch_stringEmpty_Lexicon()
-        {
-            var expected = string.Empty;
-            var actual = string.Empty.RemoveMatch(new Lexicon(NormalityComparer.Ordinal));
+    [Fact]
+    public void op_RemoveMatch_stringEmpty_Lexicon()
+    {
+        var expected = string.Empty;
+        var actual = string.Empty.RemoveMatch(new Lexicon(NormalityComparer.Ordinal));
 
-            Assert.Equal(expected, actual);
-        }
+        Assert.Equal(expected, actual);
+    }
 
-        [Fact]
-        public void op_RemoveMatch_stringNull_Lexicon()
-        {
-            Assert.Null((null as string).RemoveMatch(new Lexicon(NormalityComparer.Ordinal)));
-        }
+    [Fact]
+    public void op_RemoveMatch_stringNull_Lexicon()
+    {
+        Assert.Null((null as string).RemoveMatch(new Lexicon(NormalityComparer.Ordinal)));
+    }
 
-        [Fact]
-        public void op_RemoveMatch_string_Lexicon()
-        {
-            const string expected = "Foo";
+    [Fact]
+    public void op_RemoveMatch_string_Lexicon()
+    {
+        const string expected = "Foo";
 
-            var lexicon = new Lexicon(NormalityComparer.Ordinal)
-                              {
-                                  "Bar"
-                              };
+        var lexicon = new Lexicon(NormalityComparer.Ordinal)
+                          {
+                              "Bar"
+                          };
 
-            var actual = expected.RemoveMatch(lexicon);
+        var actual = expected.RemoveMatch(lexicon);
 
-            Assert.Equal(expected, actual);
-        }
+        Assert.Equal(expected, actual);
+    }
 
-        [Fact]
-        public void op_RemoveMatch_string_LexiconNull()
-        {
-            Assert.Throws<ArgumentNullException>(() => "Example".RemoveMatch(null));
-        }
+    [Fact]
+    public void op_RemoveMatch_string_LexiconNull()
+    {
+        Assert.Throws<ArgumentNullException>(() => "Example".RemoveMatch(null));
+    }
 
-        [Fact]
-        public void op_RemoveMatch_string_Lexicon_whenMatch()
-        {
-            var expected = string.Empty;
+    [Fact]
+    public void op_RemoveMatch_string_Lexicon_whenMatch()
+    {
+        var expected = string.Empty;
 
-            var lexicon = new Lexicon(NormalityComparer.Ordinal)
-                              {
-                                  "Example"
-                              };
+        var lexicon = new Lexicon(NormalityComparer.Ordinal)
+                          {
+                              "Example"
+                          };
 
-            var actual = "Example".RemoveMatch(lexicon);
+        var actual = "Example".RemoveMatch(lexicon);
 
-            Assert.Equal(expected, actual);
-        }
+        Assert.Equal(expected, actual);
     }
 }

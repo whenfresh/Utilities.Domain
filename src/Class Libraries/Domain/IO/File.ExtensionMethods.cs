@@ -1,13 +1,12 @@
-﻿namespace WhenFresh.Utilities.IO
-{
-    using System.Xml;
-    using WhenFresh.Utilities.IO;
+﻿namespace WhenFresh.Utilities.IO;
+
+using System.Xml;
 #if NET40
     using System.Numerics;
 #endif
 
-    public static class FileExtensionMethods
-    {
+public static class FileExtensionMethods
+{
 #if NET40
         public static BigInteger ToBigInteger(this FileInfo file)
         {
@@ -20,44 +19,35 @@
         }
 #endif
 
-        public static Date ToDate(this FileInfo file)
-        {
-            if (null == file)
-            {
-                throw new ArgumentNullException("file");
-            }
+    public static Date ToDate(this FileInfo file)
+    {
+        if (null == file)
+            throw new ArgumentNullException("file");
 
-            return file.RemoveExtension().Name;
-        }
+        return file.RemoveExtension().Name;
+    }
 
-        public static int ToInt32(this FileInfo file)
-        {
-            if (null == file)
-            {
-                throw new ArgumentNullException("file");
-            }
+    public static int ToInt32(this FileInfo file)
+    {
+        if (null == file)
+            throw new ArgumentNullException("file");
 
-            return XmlConvert.ToInt32(file.RemoveExtension().Name);
-        }
+        return XmlConvert.ToInt32(file.RemoveExtension().Name);
+    }
 
-        public static Month ToMonth(this FileInfo file)
-        {
-            if (null == file)
-            {
-                throw new ArgumentNullException("file");
-            }
+    public static Month ToMonth(this FileInfo file)
+    {
+        if (null == file)
+            throw new ArgumentNullException("file");
 
-            return file.RemoveExtension().Name;
-        }
+        return file.RemoveExtension().Name;
+    }
 
-        public static Quarter ToQuarter(this FileInfo file)
-        {
-            if (null == file)
-            {
-                throw new ArgumentNullException("file");
-            }
+    public static Quarter ToQuarter(this FileInfo file)
+    {
+        if (null == file)
+            throw new ArgumentNullException("file");
 
-            return file.RemoveExtension().Name;
-        }
+        return file.RemoveExtension().Name;
     }
 }

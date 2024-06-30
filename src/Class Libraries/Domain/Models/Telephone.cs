@@ -1,42 +1,38 @@
-﻿namespace WhenFresh.Utilities.Models
-{
-    using System.Diagnostics;
-    using WhenFresh.Utilities.Diagnostics;
+﻿namespace WhenFresh.Utilities.Models;
+
+using System.Diagnostics;
+using WhenFresh.Utilities.Diagnostics;
 #if !NET20
 #endif
 
-    public sealed class Telephone : ComparableObject
+public sealed class Telephone : ComparableObject
+{
+    private Telephone()
     {
-        private Telephone()
-        {
-        }
+    }
 
-        private Telephone(string number)
-        {
-            Number = number;
-        }
+    private Telephone(string number)
+    {
+        Number = number;
+    }
 
-        public string Number { get; set; }
+    public string Number { get; set; }
 
-        public static implicit operator Telephone(string value)
-        {
-            return ReferenceEquals(null, value)
-                       ? null
-                       : FromString(value);
-        }
+    public static implicit operator Telephone(string value)
+    {
+        return ReferenceEquals(null, value)
+                   ? null
+                   : FromString(value);
+    }
 
-        public static Telephone FromString(string value)
-        {
-            Trace.WriteIf(Tracing.Is.TraceVerbose, value);
-            if (null == value)
-            {
-                throw new ArgumentNullException("value");
-            }
+    public static Telephone FromString(string value)
+    {
+        Trace.WriteIf(Tracing.Is.TraceVerbose, value);
+        if (null == value)
+            throw new ArgumentNullException("value");
 
-            if (0 == value.Length)
-            {
-                return new Telephone();
-            }
+        if (0 == value.Length)
+            return new Telephone();
 
 #if NET20
             var number = string.Empty;
@@ -50,32 +46,25 @@
                 number += c;
             }
 #else
-            var number = new string(value.AsEnumerable().Where(char.IsDigit).ToArray());
+        var number = new string(value.AsEnumerable().Where(char.IsDigit).ToArray());
 #endif
 
-            if (2 > number.Length)
-            {
-                return new Telephone();
-            }
+        if (2 > number.Length)
+            return new Telephone();
 
-            if ('+' == value[0])
-            {
-                return new Telephone("+" + number);
-            }
+        if ('+' == value[0])
+            return new Telephone("+" + number);
 
-            if (number.StartsWith("00", StringComparison.Ordinal))
-            {
-                return new Telephone("+" + number.Substring(2));
-            }
+        if (number.StartsWith("00", StringComparison.Ordinal))
+            return new Telephone("+" + number.Substring(2));
 
-            return '0' == number[0]
-                       ? new Telephone("+44" + number.Substring(1))
-                       : new Telephone("+44" + number);
-        }
+        return '0' == number[0]
+                   ? new Telephone("+44" + number.Substring(1))
+                   : new Telephone("+44" + number);
+    }
 
-        public override string ToString()
-        {
-            return Number ?? string.Empty;
-        }
+    public override string ToString()
+    {
+        return Number ?? string.Empty;
     }
 }

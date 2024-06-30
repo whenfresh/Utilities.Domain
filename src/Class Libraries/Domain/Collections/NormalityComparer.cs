@@ -1,85 +1,56 @@
-﻿namespace WhenFresh.Utilities.Collections
+﻿namespace WhenFresh.Utilities.Collections;
+
+public class NormalityComparer : INormalityComparer
 {
-    public class NormalityComparer : INormalityComparer
+    public NormalityComparer()
     {
-        private static readonly NormalityComparer _currentCulture = new NormalityComparer
-                                                                        {
-                                                                            Comparison = StringComparison.CurrentCulture
-                                                                        };
+        Comparison = StringComparison.Ordinal;
+    }
 
-        private static readonly NormalityComparer _ordinal = new NormalityComparer
-                                                                 {
-                                                                     Comparison = StringComparison.Ordinal
-                                                                 };
+    public static NormalityComparer CurrentCulture { get; } = new()
+                                                                  {
+                                                                      Comparison = StringComparison.CurrentCulture
+                                                                  };
 
-        private static readonly NormalityComparer _ordinalIgnoreCase = new NormalityComparer
-                                                                           {
-                                                                               Comparison = StringComparison.OrdinalIgnoreCase
-                                                                           };
+    public static NormalityComparer Ordinal { get; } = new()
+                                                           {
+                                                               Comparison = StringComparison.Ordinal
+                                                           };
 
-        public NormalityComparer()
-        {
-            Comparison = StringComparison.Ordinal;
-        }
+    public static NormalityComparer OrdinalIgnoreCase { get; } = new()
+                                                                     {
+                                                                         Comparison = StringComparison.OrdinalIgnoreCase
+                                                                     };
 
-        public static NormalityComparer CurrentCulture
-        {
-            get
-            {
-                return _currentCulture;
-            }
-        }
+    public StringComparison Comparison { get; set; }
 
-        public static NormalityComparer Ordinal
-        {
-            get
-            {
-                return _ordinal;
-            }
-        }
+    public virtual bool Equals(string x,
+                               string y)
+    {
+        return string.Equals(x, Normalize(y), Comparison);
+    }
 
-        public static NormalityComparer OrdinalIgnoreCase
-        {
-            get
-            {
-                return _ordinalIgnoreCase;
-            }
-        }
+    public int GetHashCode(string obj)
+    {
+        return null == obj
+                   ? 0
+                   : Normalize(obj).GetHashCode();
+    }
 
-        public StringComparison Comparison { get; set; }
-
-        public virtual bool Equals(string x,
-                                   string y)
-        {
-            return string.Equals(x, Normalize(y), Comparison);
-        }
-
-        public int GetHashCode(string obj)
-        {
-            return null == obj
-                       ? 0
-                       : Normalize(obj).GetHashCode();
-        }
-
-        public virtual string Normalize(string value)
-        {
-            if (null == value)
-            {
-                return null;
-            }
+    public virtual string Normalize(string value)
+    {
+        if (null == value)
+            return null;
 
 #if NET20
             if (Comparison == StringComparison.OrdinalIgnoreCase ||
                 Comparison == StringComparison.OrdinalIgnoreCase ||
                 Comparison == StringComparison.InvariantCultureIgnoreCase)
 #else
-            if (Comparison.In(StringComparison.CurrentCultureIgnoreCase, StringComparison.OrdinalIgnoreCase, StringComparison.InvariantCultureIgnoreCase))
+        if (Comparison.In(StringComparison.CurrentCultureIgnoreCase, StringComparison.OrdinalIgnoreCase, StringComparison.InvariantCultureIgnoreCase))
 #endif
-            {
-                value = value.ToUpperInvariant();
-            }
+            value = value.ToUpperInvariant();
 
-            return value;
-        }
+        return value;
     }
 }

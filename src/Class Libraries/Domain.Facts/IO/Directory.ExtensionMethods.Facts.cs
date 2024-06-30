@@ -1,14 +1,10 @@
-﻿namespace WhenFresh.Utilities.IO
-{
-    using System.IO;
-    using WhenFresh.Utilities;
-    using WhenFresh.Utilities.IO;
+﻿namespace WhenFresh.Utilities.IO;
 #if NET40
     using System.Numerics;
 #endif
 
-    public sealed class DirectoryExtensionMethodsFacts
-    {
+public sealed class DirectoryExtensionMethodsFacts
+{
 #if NET40
         [Fact]
         public void op_ToBigInteger_DirectoryInfoNull()
@@ -31,150 +27,149 @@
         }
 #endif
 
-        [Fact]
-        public void op_ToCsvFile_DirectoryInfoNull_FileInfo()
+    [Fact]
+    public void op_ToCsvFile_DirectoryInfoNull_FileInfo()
+    {
+        Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToCsvFile(new FileInfo("example")));
+    }
+
+    [Fact]
+    public void op_ToCsvFile_DirectoryInfo_FileInfoNull()
+    {
+        using (var temp = new TempDirectory())
         {
-            Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToCsvFile(new FileInfo("example")));
+            // ReSharper disable once AccessToDisposedClosure
+            Assert.Throws<ArgumentNullException>(() => temp.Info.ToCsvFile(null as FileInfo));
         }
+    }
 
-        [Fact]
-        public void op_ToCsvFile_DirectoryInfo_FileInfoNull()
+    [Fact]
+    public void op_ToCsvFile_DirectoryInfo_FileInfo()
+    {
+        using (var temp = new TempDirectory())
         {
-            using (var temp = new TempDirectory())
-            {
-                // ReSharper disable once AccessToDisposedClosure
-                Assert.Throws<ArgumentNullException>(() => temp.Info.ToCsvFile(null as FileInfo));
-            }
+            var expected = temp.Info.ToFile("example.csv").FullName;
+            var actual = temp.Info.ToCsvFile(temp.Info.ToFile("example.txt")).FullName;
+
+            Assert.Equal(expected, actual);
         }
+    }
 
-        [Fact]
-        public void op_ToCsvFile_DirectoryInfo_FileInfo()
+    [Fact]
+    public void op_ToCsvFile_DirectoryInfoNull_string()
+    {
+        Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToCsvFile("example"));
+    }
+
+    [Fact]
+    public void op_ToCsvFile_DirectoryInfo_stringEmpty()
+    {
+        using (var temp = new TempDirectory())
         {
-            using (var temp = new TempDirectory())
-            {
-                var expected = temp.Info.ToFile("example.csv").FullName;
-                var actual = temp.Info.ToCsvFile(temp.Info.ToFile("example.txt")).FullName;
-
-                Assert.Equal(expected, actual);
-            }
+            // ReSharper disable once AccessToDisposedClosure
+            Assert.Throws<ArgumentOutOfRangeException>(() => temp.Info.ToCsvFile(string.Empty));
         }
+    }
 
-        [Fact]
-        public void op_ToCsvFile_DirectoryInfoNull_string()
+    [Fact]
+    public void op_ToCsvFile_DirectoryInfo_stringNull()
+    {
+        using (var temp = new TempDirectory())
         {
-            Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToCsvFile("example"));
+            // ReSharper disable once AccessToDisposedClosure
+            Assert.Throws<ArgumentNullException>(() => temp.Info.ToCsvFile(null as string));
         }
+    }
 
-        [Fact]
-        public void op_ToCsvFile_DirectoryInfo_stringEmpty()
+    [Fact]
+    public void op_ToCsvFile_DirectoryInfo_string()
+    {
+        using (var temp = new TempDirectory())
         {
-            using (var temp = new TempDirectory())
-            {
-                // ReSharper disable once AccessToDisposedClosure
-                Assert.Throws<ArgumentOutOfRangeException>(() => temp.Info.ToCsvFile(string.Empty));
-            }
+            var expected = temp.Info.ToFile("example.csv").FullName;
+            var actual = temp.Info.ToCsvFile("example").FullName;
+
+            Assert.Equal(expected, actual);
         }
+    }
 
-        [Fact]
-        public void op_ToCsvFile_DirectoryInfo_stringNull()
+    [Fact]
+    public void op_ToDate_DirectoryInfoNull()
+    {
+        Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToDate());
+    }
+
+    [Fact]
+    public void op_ToDate_DirectoryInfo()
+    {
+        using (var temp = new TempDirectory())
         {
-            using (var temp = new TempDirectory())
-            {
-                // ReSharper disable once AccessToDisposedClosure
-                Assert.Throws<ArgumentNullException>(() => temp.Info.ToCsvFile(null as string));
-            }
+            var file = temp.Info.ToDirectory("1969-03-10", true);
+
+            var expected = new Date(1969, MonthOfYear.March, 10);
+            var actual = file.ToDate();
+
+            Assert.Equal(expected, actual);
         }
+    }
 
-        [Fact]
-        public void op_ToCsvFile_DirectoryInfo_string()
+    [Fact]
+    public void op_ToInt32_DirectoryInfoNull()
+    {
+        Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToInt32());
+    }
+
+    [Fact]
+    public void op_ToInt32_DirectoryInfo()
+    {
+        using (var temp = new TempDirectory())
         {
-            using (var temp = new TempDirectory())
-            {
-                var expected = temp.Info.ToFile("example.csv").FullName;
-                var actual = temp.Info.ToCsvFile("example").FullName;
+            var file = temp.Info.ToDirectory("1234567890", true);
 
-                Assert.Equal(expected, actual);
-            }
+            var expected = 1234567890;
+            var actual = file.ToInt32();
+
+            Assert.Equal(expected, actual);
         }
+    }
 
-        [Fact]
-        public void op_ToDate_DirectoryInfoNull()
+    [Fact]
+    public void op_ToMonth_DirectoryInfoNull()
+    {
+        Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToMonth());
+    }
+
+    [Fact]
+    public void op_ToMonth_DirectoryInfo()
+    {
+        using (var temp = new TempDirectory())
         {
-            Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToDate());
+            var file = temp.Info.ToDirectory("1969-03", true);
+
+            var expected = new Month(1969, MonthOfYear.March);
+            var actual = file.ToMonth();
+
+            Assert.Equal(expected, actual);
         }
+    }
 
-        [Fact]
-        public void op_ToDate_DirectoryInfo()
+    [Fact]
+    public void op_ToQuarter_DirectoryInfoNull()
+    {
+        Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToQuarter());
+    }
+
+    [Fact]
+    public void op_ToQuarter_DirectoryInfo()
+    {
+        using (var temp = new TempDirectory())
         {
-            using (var temp = new TempDirectory())
-            {
-                var file = temp.Info.ToDirectory("1969-03-10", true);
+            var file = temp.Info.ToDirectory("1969 Q1", true);
 
-                var expected = new Date(1969, MonthOfYear.March, 10);
-                var actual = file.ToDate();
+            var expected = new Quarter(1969, QuarterOfYear.Q1);
+            var actual = file.ToQuarter();
 
-                Assert.Equal(expected, actual);
-            }
-        }
-
-        [Fact]
-        public void op_ToInt32_DirectoryInfoNull()
-        {
-            Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToInt32());
-        }
-
-        [Fact]
-        public void op_ToInt32_DirectoryInfo()
-        {
-            using (var temp = new TempDirectory())
-            {
-                var file = temp.Info.ToDirectory("1234567890", true);
-
-                var expected = 1234567890;
-                var actual = file.ToInt32();
-
-                Assert.Equal(expected, actual);
-            }
-        }
-
-        [Fact]
-        public void op_ToMonth_DirectoryInfoNull()
-        {
-            Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToMonth());
-        }
-
-        [Fact]
-        public void op_ToMonth_DirectoryInfo()
-        {
-            using (var temp = new TempDirectory())
-            {
-                var file = temp.Info.ToDirectory("1969-03", true);
-
-                var expected = new Month(1969, MonthOfYear.March);
-                var actual = file.ToMonth();
-
-                Assert.Equal(expected, actual);
-            }
-        }
-
-        [Fact]
-        public void op_ToQuarter_DirectoryInfoNull()
-        {
-            Assert.Throws<ArgumentNullException>(() => (null as DirectoryInfo).ToQuarter());
-        }
-
-        [Fact]
-        public void op_ToQuarter_DirectoryInfo()
-        {
-            using (var temp = new TempDirectory())
-            {
-                var file = temp.Info.ToDirectory("1969 Q1", true);
-
-                var expected = new Quarter(1969, QuarterOfYear.Q1);
-                var actual = file.ToQuarter();
-
-                Assert.Equal(expected, actual);
-            }
+            Assert.Equal(expected, actual);
         }
     }
 }

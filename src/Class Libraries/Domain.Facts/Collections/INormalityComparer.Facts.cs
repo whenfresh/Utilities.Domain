@@ -1,53 +1,51 @@
-﻿namespace WhenFresh.Utilities.Collections
+﻿namespace WhenFresh.Utilities.Collections;
+
+using Moq;
+
+public sealed class INormalityComparerFacts
 {
-    using System.Collections.Generic;
-    using Moq;
-
-    public sealed class INormalityComparerFacts
+    [Fact]
+    public void a_definition()
     {
-        [Fact]
-        public void a_definition()
-        {
-            Assert.True(new TypeExpectations<INormalityComparer>()
-                            .IsInterface()
-                            .Implements<IEqualityComparer<string>>()
-                            .Result);
-        }
+        Assert.True(new TypeExpectations<INormalityComparer>()
+                    .IsInterface()
+                    .Implements<IEqualityComparer<string>>()
+                    .Result);
+    }
 
-        [Fact]
-        public void op_Normalize_string()
-        {
-            const string expected = "Example";
+    [Fact]
+    public void op_Normalize_string()
+    {
+        const string expected = "Example";
 
-            var mock = new Mock<INormalityComparer>();
-            mock
-                .Setup(x => x.Normalize(expected))
-                .Returns(expected)
-                .Verifiable();
+        var mock = new Mock<INormalityComparer>();
+        mock
+            .Setup(x => x.Normalize(expected))
+            .Returns(expected)
+            .Verifiable();
 
-            var actual = mock.Object.Normalize(expected);
+        var actual = mock.Object.Normalize(expected);
 
-            Assert.Same(expected, actual);
+        Assert.Same(expected, actual);
 
-            mock.VerifyAll();
-        }
+        mock.VerifyAll();
+    }
 
-        [Fact]
-        public void prop_Comparison_get()
-        {
-            const StringComparison expected = StringComparison.Ordinal;
+    [Fact]
+    public void prop_Comparison_get()
+    {
+        const StringComparison expected = StringComparison.Ordinal;
 
-            var mock = new Mock<INormalityComparer>();
-            mock
-                .SetupGet(x => x.Comparison)
-                .Returns(expected)
-                .Verifiable();
+        var mock = new Mock<INormalityComparer>();
+        mock
+            .SetupGet(x => x.Comparison)
+            .Returns(expected)
+            .Verifiable();
 
-            var actual = mock.Object.Comparison;
+        var actual = mock.Object.Comparison;
 
-            Assert.Equal(expected, actual);
+        Assert.Equal(expected, actual);
 
-            mock.VerifyAll();
-        }
+        mock.VerifyAll();
     }
 }
