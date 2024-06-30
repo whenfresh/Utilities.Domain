@@ -1,9 +1,10 @@
-﻿namespace WhenFresh.Utilities.Domain.Facts.Data
+﻿namespace WhenFresh.Utilities.Data
 {
     using System.IO;
     using System.Linq;
+    using WhenFresh.Utilities.Collections;
     using WhenFresh.Utilities.Core.IO;
-    using WhenFresh.Utilities.Domain.Data;
+    using WhenFresh.Utilities.Models;
 
     public sealed class CsvLexiconStorageFacts
     {

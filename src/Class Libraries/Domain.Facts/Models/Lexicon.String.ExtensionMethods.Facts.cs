@@ -1,5 +1,7 @@
-﻿namespace WhenFresh.Utilities.Domain.Facts.Models
+﻿namespace WhenFresh.Utilities.Models
 {
+    using WhenFresh.Utilities.Collections;
+
     public sealed class LexiconStringExtensionMethodsFacts
     {
         [Fact]

@@ -1,7 +1,7 @@
-﻿namespace WhenFresh.Utilities.Domain.Models
+﻿namespace WhenFresh.Utilities.Models
 {
-    using WhenFresh.Utilities.Domain.Collections;
-    using WhenFresh.Utilities.Domain.Data;
+    using WhenFresh.Utilities.Collections;
+    using WhenFresh.Utilities.Data;
 
     [SuppressMessage("Microsoft.Naming", "CA1710:IdentifiersShouldHaveCorrectSuffix", Justification = "This naming is intentional.")]
     public class Lexicon : LexicalCollection

@@ -1,4 +1,4 @@
-﻿namespace WhenFresh.Utilities.Domain.Models
+﻿namespace WhenFresh.Utilities.Models
 {
     public class BritishTelephoneNumberPlanItem
     {

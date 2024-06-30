@@ -1,9 +1,8 @@
-﻿namespace WhenFresh.Utilities.Domain.Facts.IO
+﻿namespace WhenFresh.Utilities.IO
 {
     using System.IO;
     using WhenFresh.Utilities.Core;
     using WhenFresh.Utilities.Core.IO;
-    using WhenFresh.Utilities.Domain.IO;
 #if NET40
     using System.Numerics;
 #endif

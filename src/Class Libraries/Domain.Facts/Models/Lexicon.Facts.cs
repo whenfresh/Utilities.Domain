@@ -1,7 +1,8 @@
-﻿namespace WhenFresh.Utilities.Domain.Facts.Models
+﻿namespace WhenFresh.Utilities.Models
 {
     using Moq;
-    using WhenFresh.Utilities.Domain.Data;
+    using WhenFresh.Utilities.Collections;
+    using WhenFresh.Utilities.Data;
 
     public sealed class LexiconFacts
     {

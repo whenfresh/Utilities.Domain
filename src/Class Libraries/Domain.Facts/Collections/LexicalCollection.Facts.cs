@@ -1,8 +1,9 @@
-﻿namespace WhenFresh.Utilities.Domain.Facts.Collections
+﻿namespace WhenFresh.Utilities.Collections
 {
     using System.Collections.Generic;
     using System.Linq;
     using WhenFresh.Utilities.Core;
+    using WhenFresh.Utilities.Models;
 
     public sealed class LexicalCollectionFacts
     {

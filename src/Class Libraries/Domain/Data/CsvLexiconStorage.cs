@@ -1,12 +1,12 @@
-﻿namespace WhenFresh.Utilities.Domain.Data
+﻿namespace WhenFresh.Utilities.Data
 {
     using System.Diagnostics;
+    using WhenFresh.Utilities.Collections;
     using WhenFresh.Utilities.Core.Collections;
     using WhenFresh.Utilities.Core.IO;
     using WhenFresh.Utilities.Data.Data;
-    using WhenFresh.Utilities.Domain.Collections;
-    using WhenFresh.Utilities.Domain.Diagnostics;
-    using WhenFresh.Utilities.Domain.Models;
+    using WhenFresh.Utilities.Diagnostics;
+    using WhenFresh.Utilities.Models;
 #if !NET20
 #endif
 

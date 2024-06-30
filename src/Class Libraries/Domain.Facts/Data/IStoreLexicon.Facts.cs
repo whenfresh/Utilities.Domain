@@ -1,7 +1,8 @@
-﻿namespace WhenFresh.Utilities.Domain.Facts.Data
+﻿namespace WhenFresh.Utilities.Data
 {
     using Moq;
-    using WhenFresh.Utilities.Domain.Data;
+    using WhenFresh.Utilities.Collections;
+    using WhenFresh.Utilities.Models;
 
     public sealed class IStoreLexiconFacts
     {

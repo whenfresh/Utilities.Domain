@@ -1,4 +1,4 @@
-﻿namespace WhenFresh.Utilities.Domain.Facts.Collections
+﻿namespace WhenFresh.Utilities.Collections
 {
     using System.Collections.Generic;
     using Moq;

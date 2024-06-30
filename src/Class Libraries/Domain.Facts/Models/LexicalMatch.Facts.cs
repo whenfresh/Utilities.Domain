@@ -1,5 +1,6 @@
-﻿namespace WhenFresh.Utilities.Domain.Facts.Models
+﻿namespace WhenFresh.Utilities.Models
 {
+    using WhenFresh.Utilities.Collections;
     using WhenFresh.Utilities.Core;
 
     public sealed class LexicalMatchFacts

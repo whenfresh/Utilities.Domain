@@ -1,4 +1,4 @@
-﻿namespace WhenFresh.Utilities.Domain.IO
+﻿namespace WhenFresh.Utilities.IO
 {
     using System.Xml;
     using WhenFresh.Utilities.Core.Collections;

@@ -1,4 +1,4 @@
-﻿namespace WhenFresh.Utilities.Domain.Models
+﻿namespace WhenFresh.Utilities.Models
 {
     using WhenFresh.Utilities.Core.Collections;
     using WhenFresh.Utilities.Data.Data;

@@ -1,4 +1,4 @@
-﻿namespace WhenFresh.Utilities.Domain.Collections
+﻿namespace WhenFresh.Utilities.Collections
 {
     public class SynonymCollection : IEnumerable<string>
     {

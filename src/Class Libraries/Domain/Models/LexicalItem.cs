@@ -1,7 +1,7 @@
-﻿namespace WhenFresh.Utilities.Domain.Models
+﻿namespace WhenFresh.Utilities.Models
 {
+    using WhenFresh.Utilities.Collections;
     using WhenFresh.Utilities.Core.Data;
-    using WhenFresh.Utilities.Domain.Collections;
 #if !NET20
 #endif
 

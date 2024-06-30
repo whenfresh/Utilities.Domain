@@ -1,7 +1,7 @@
-﻿namespace WhenFresh.Utilities.Domain.Data
+﻿namespace WhenFresh.Utilities.Data
 {
-    using WhenFresh.Utilities.Domain.Collections;
-    using WhenFresh.Utilities.Domain.Models;
+    using WhenFresh.Utilities.Collections;
+    using WhenFresh.Utilities.Models;
 
     public interface IStoreLexicon
     {

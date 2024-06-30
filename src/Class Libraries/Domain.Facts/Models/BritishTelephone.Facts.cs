@@ -1,4 +1,4 @@
-﻿namespace WhenFresh.Utilities.Domain.Facts.Models
+﻿namespace WhenFresh.Utilities.Models
 {
     using System.IO;
     using WhenFresh.Utilities.Core.Collections;

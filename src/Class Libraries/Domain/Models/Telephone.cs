@@ -1,7 +1,7 @@
-﻿namespace WhenFresh.Utilities.Domain.Models
+﻿namespace WhenFresh.Utilities.Models
 {
     using System.Diagnostics;
-    using WhenFresh.Utilities.Domain.Diagnostics;
+    using WhenFresh.Utilities.Diagnostics;
 #if !NET20
 #endif
 
